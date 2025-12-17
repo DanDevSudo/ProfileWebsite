@@ -1,0 +1,13 @@
+.central-intro-quote {
+  position: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 200px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
