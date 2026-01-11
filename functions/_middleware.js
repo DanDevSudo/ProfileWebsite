@@ -8,9 +8,9 @@ export async function onRequest({ request, next }) {
 
   //allow login styling
   if (
-    url.pathname.startsWith("login") || url.pathname.endsWith(".css")
-    || url.pathname.startsWith("flower") || url.pathname.endsWith(".jpg")
-    || url.pathname.startsWith("retrosupply") || url.pathname.endsWith(".jpg")
+    url.pathname.startsWith("login") || url.pathname.endsWith(".css") || 
+    url.pathname.startsWith("flower") || url.pathname.endsWith(".jpg") || 
+    url.pathname.startsWith("retrosupply") || url.pathname.endsWith(".jpg")
     )
   {
     return next()
