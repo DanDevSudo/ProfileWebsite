@@ -23,26 +23,36 @@
       </div>
 
       <div class = loginpage-right>
-        <div class = loginrequest>
+        <div class = loginpage-content>
           <div class = loginrequest-title>
               USER LOGIN
           </div>
-          <div class = loginrequest-password>
-            <input type="text" name="" id="">
-          </div>
-          <div class = loginrequest-checkmarks>
-            <div class = loginrequest-remember-me>
-              <input type="checkbox" name="" id="">
-            </div>
-            <div class = loginrequest-forgot-password>
-              Forgot password?
-            </div>
+          <div class = loginrequest-input>
+            <input class = password-input placeholder= "Enter password" type ="password" name="login_pasword" id="login_password1">
           </div>
           <div class = loginrequest-button>
-            <button>Login</button>
+            <button class = login-button id="loginbtn">Login</button>
           </div>
         </div>
       </div>
     </div>
   </body>
 </html>
+
+<script>
+document.getElementById("loginBtn").addEventListener("click", async () => {
+  const password = document.getElementById("login_password1").value;
+
+  const res = await fetch("/api/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password })
+  });
+
+  if (res.ok) {
+    window.location.href = "/";
+  } else {
+    alert("Wrong password");
+  }
+});
+</script>

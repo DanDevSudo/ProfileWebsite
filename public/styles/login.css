@@ -18,7 +18,8 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
-
+  border-radius: 10px;
+  background-color: white;
 }
 
 .loginpage-left {
@@ -59,33 +60,51 @@
   width: 40%;
   display: flex;
   color:black;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.loginrequest {
-
+.loginpage-content {
+  width: 50%;
+  position: relative;
 }
 
 .loginrequest-title {
-
+  font-size: large;
+  color: rgb(190, 93, 190);
+  text-align: center;
+  display: block;
 }
 
-.loginrequest-password {
-
+.loginrequest-input {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loginrequest-checkmarks {
-
-}
-
-.loginrequest-remember-me {
-
-}
-
-.loginrequest-forgot-password {
-
+.password-input {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.096);
+  color: rgb(0, 0, 0);
+  height: 26px;
+  border-radius: 11px;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
 }
 
 .loginrequest-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.loginrequest-button button{
+  border: none;
+  background-color: aquamarine;
+  width: 120px;
+  height: 26px;
+  border-radius: 13px;
 }
