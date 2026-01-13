@@ -22,17 +22,20 @@ export async function onRequestPost({ request, env }) {
     256
   );
 
-  const hash = [...new Uint8Array(derivedBits)]
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
+  const hash = [...new Uint8Array(derivedBits)].map
+  (b => b.toString(16).padStart(2, "0"))
+  .join("");
 
-  if (hash === env.HASHED_PASSWORD) {
+  const derivedBuffer = Buffer.from(hash, "hex");
+  const storedBuffer = Buffer.from(process.env.HASHED_PASSWORD, "hex");
+
+  if (derivedBuffer.length !== storedBuffer.length || !timingSafeEqual(derivedBuffer, storedBuffer)) {
+    return new Response("Unauthorized", { status: 401 });
+  }
+  else {
     return new Response("OK", {
       status: 200,
-      headers: {
-        "Set-Cookie": "portfolio_auth=1; Path=/; HttpOnly; SameSite=Strict"
-      }
+      headers: {"Set-Cookie": "portfolio_auth=1; Path=/; HttpOnly; SameSite=Strict"}
     });
   }
-  return new Response("Unauthorized", { status: 401 });
 }
