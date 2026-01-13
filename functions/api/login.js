@@ -2,7 +2,7 @@ export async function onRequestPost({ request, env }) {
 
   const { password } = await request.json();
   const encoder = new TextEncoder();
-  
+
   const keyMaterial = await crypto.subtle.importKey(
     "raw",
     encoder.encode(password),
@@ -27,7 +27,6 @@ export async function onRequestPost({ request, env }) {
     .join("");
 
   if (hash === env.HASHED_PASSWORD) {
-    console.log("Access granted");
     return new Response("OK", {
       status: 200,
       headers: {
@@ -35,6 +34,5 @@ export async function onRequestPost({ request, env }) {
       }
     });
   }
-  console.log("Wrong password");
   return new Response("Unauthorized", { status: 401 });
 }

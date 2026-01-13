@@ -48,8 +48,10 @@
       });
 
       if (res.ok) {
+        console.log("correct password");
         window.location.href = "./sites/home.html";
       } else {
+        console.log("testing");
         alert("Wrong password");
       }
     });
