@@ -35,6 +35,6 @@ export async function onRequestPost({ request, env }) {
       }
     });
   }
-
+  console.log("Wrong password");
   return new Response("Unauthorized", { status: 401 });
 }
