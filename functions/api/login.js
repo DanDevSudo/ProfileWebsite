@@ -27,10 +27,11 @@ export async function onRequestPost({ request, env }) {
     .join("");
 
   if (hash === env.HASHED_PASSWORD) {
+    console.log("Access granted");
     return new Response("OK", {
       status: 200,
       headers: {
-        "Set-Cookie": "auth=1; Path=/; HttpOnly; Secure; SameSite=Strict"
+        "Set-Cookie": "portfolio_auth=1; Path=/; HttpOnly; SameSite=Strict"
       }
     });
   }
