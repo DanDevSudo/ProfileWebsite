@@ -1,8 +1,8 @@
 export async function onRequestPost({ request, env }) {
+
   const { password } = await request.json();
-
   const encoder = new TextEncoder();
-
+  
   const keyMaterial = await crypto.subtle.importKey(
     "raw",
     encoder.encode(password),

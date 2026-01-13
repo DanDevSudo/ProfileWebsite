@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DanDev</title>
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/header.css">
-    <link rel="stylesheet" href="./styles/central_quote.css">
+    <title>Holmdev</title>
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/login.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   </head>
 
-  <body class = login-wrapper>
-    <div class = "header">
-      <div class = "name-icon">
-          Loginpage
+  <body class = wrapper>
+    <div class = login-box>
+      <div class = loginpage-left>
+        <div class = information-upper>
+          <div>
+            <h1 class = login-header>Welcome to my personal website</h1>
+            <h3 class = login-paragraph>This website is solely shared privately. If you have received a password from me, please enter it in order to log in. </h3>
+          </div>
+        </div>
       </div>
-      <div class = "info-bar">
-        <div><a href="index.html"><button class = "info-button" href="test.html">Home</button></a></div>
-        <div><a href="cv.html"><button class = "info-button" href="test.html">CV</button></a></div>
-        <div><a href="projects.html"><button class = "info-button" href="test.html">Projects</button></a></div>
-        <div><a href="about-me.html"><button class = "info-button" href="test.html">About Me</button></a></div>
-        <div><a href="connect.html"><button class = "info-button" href="test.html">Connect</button></a></div>
+
+      <div class = loginpage-right>
+        <div class = loginpage-content>
+          <div class = loginrequest-title>
+              USER LOGIN
+          </div>
+          <div class = loginrequest-input>
+            <input class = password-input placeholder= "Enter password" type ="password" name="login_pasword" id="login_password1">
+          </div>
+          <div class = loginrequest-button>
+            <button class = login-button id="loginbtn">Login</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class = "central-intro-wrapper">
-      <span class = "central-intro-quote">Design With Intent.</span>
-    </div>
+
+  <script>
+    document.getElementById("loginbtn").addEventListener("click", async () => {
+      const password = document.getElementById("login_password1").value.trim();
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password })
+      });
+
+      if (res.ok) {
+        window.location.href = "./sites/home.html";
+      } else {
+        alert("Wrong password");
+      }
+    });
+  </script>
   </body>
 </html>

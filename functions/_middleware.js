@@ -1,6 +1,7 @@
 export async function onRequest({ request, next }) {
   const url = new URL(request.url)
-
+  const path = url.pathname;
+  
   // Allow login page and login handler
   if (url.pathname.startsWith("/login")) {
     return next()
@@ -14,6 +15,10 @@ export async function onRequest({ request, next }) {
     )
   {
     return next()
+  }
+
+  if (path.startsWith("/api/login") || path === "/login") {
+    return next(); // allow
   }
 
   // Check for auth cookie
