@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "crypto";
 export async function onRequestPost({ request, env }) {
 
   const { password } = await request.json();
@@ -28,7 +29,6 @@ export async function onRequestPost({ request, env }) {
 
   const derivedBuffer = Buffer.from(hash, "hex");
   const storedBuffer = Buffer.from(process.env.HASHED_PASSWORD, "hex");
-
   if (derivedBuffer.length !== storedBuffer.length || !timingSafeEqual(derivedBuffer, storedBuffer)) {
     return new Response("Unauthorized", { status: 401 });
   }
