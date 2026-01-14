@@ -1,4 +1,4 @@
-import { timingSafeEqual } from "crypto";
+import { timingSafeEqual } from "node:crypto";
 export async function onRequestPost({ request, env }) {
 
   const { password } = await request.json();
