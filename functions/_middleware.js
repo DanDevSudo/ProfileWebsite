@@ -36,7 +36,10 @@ function addSecurityHeaders(response) {
   headers.set("Referrer-Policy", "strict-origin-when-cross-origin"); // Control referrer info
   headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=(), payment=(), usb=()"); // Disable browser features
   headers.set("X-XSS-Protection", "0"); // Basic XSS protection
-
+  headers.set("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload"); // Enforce HTTPS
+  headers.set("Content-Security-Policy", "default-src 'self'; img-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; frame-ancestors 'none';"
+);
+ // Content Security Policy
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,
