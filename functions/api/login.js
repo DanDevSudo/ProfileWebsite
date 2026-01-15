@@ -2,11 +2,6 @@ export async function onRequestPost({ request, env }) {
   try {
     const { password } = await request.json();
     const hashed = await hashPassword(password, env.SALT);
-    console.log("Lösen:" + password)
-    console.log("hashed lösen:" + hashed)
-    console.log([...Buffer.from(password, "utf8")]);
-    console.log([...Buffer.from(env.SALT, "utf8")]);
-    console.log("env hash:" + env.HASHED_PASSWORD)
     if (hashed === env.HASHED_PASSWORD) {
       return new Response("OK", {
         status: 200,
@@ -25,9 +20,6 @@ export async function onRequestPost({ request, env }) {
 
 async function hashPassword(password, salt) {
   const encoder = new TextEncoder();
-  console.log("encoder")
-  console.log([...encoder.encode(password)]);
-  console.log([...encoder.encode(salt)]);
   const key = await crypto.subtle.importKey(
     "raw",
     encoder.encode(password),
