@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holmdev</title>
+
     <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/login.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
   </head>
 
   <body class = wrapper>
@@ -37,22 +34,6 @@
         </div>
       </div>
     </div>
-
-  <script>
-    document.getElementById("loginbtn").addEventListener("click", async () => {
-      const password = document.getElementById("login_password1").value.trim();
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password })
-      });
-
-      if (res.ok) {
-        window.location.href = "./sites/home.html";
-      } else {
-        alert("Wrong password");
-      }
-    });
-  </script>
+    <script src="./scripts/loginButton.js" defer></script>
   </body>
 </html>
