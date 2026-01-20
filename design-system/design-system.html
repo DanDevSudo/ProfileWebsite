@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container ">
+      <h1 class="uppercase">Design system</h1>
+    
+      <section id="colors" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>01</span> colors</h2>
+        <div class="flex">
+
+          <div style="flex-grow: 1;">
+            <div class="bg-dark text-white ff-serif fs-500" style="padding: 3rem 1rem 1rem ; border: 1px solid white;">#0B0D17</div>
+              <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+              <p><span class="text-accent">HSL</span> 230&#176;, 35%, 7%</p>
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div class="bg-accent text-dark ff-serif fs-500" style="padding: 3rem 1rem 1rem; border: 1px solid white;">#D0D6F9</div>
+              <p><span class="text-accent">RGB</span> 208, 214, 249</p>
+              <p><span class="text-accent">HSL</span> 231&#176;, 77%, 90%</p>
+          </div>
+
+          <div style="flex-grow: 1;">
+            <div class="bg-white text-dark ff-serif fs-500" style="padding: 3rem 1rem 1rem; border: 1px solid white;">#FFFFFF</div>
+              <p><span class="text-accent">RGB</span> 255, 255, 255</p>
+              <p><span class="text-accent" >HSL</span> 0&#176;, 0%, 100%</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="typography" style="margin: 4rem 0">
+        <h2 class="numbered-title"><span>02 </span>Typography</h2>
+        <div class="flex">
+          <div class="flow" style="flex-basis: 100%; --flow-space: 4rem;">
+            <div>
+              <p class="text-accent">Heading 1- Bellefair Regular -150px</p>
+              <h1 class="uppercase ff-serif fs-900">Earth</h1>
+            </div>
+
+            <div>
+              <p class="text-accent">heading 2 - Bellefair Regular - 100px</p>
+              <h2 class="uppercase ff-serifs fs-800">Venus</h2>
+            </div>
+
+            <div>
+              <p class="text-accent">heading 3 - Bellefair Regular 56px</p>
+              <h3 class="uppercase ff-serifs fs-700">Jupiter & Saturn</h3>
+            </div>
+
+            <div>
+              <p class="text-accent">Heading 4 - Bellefair Regular - 32px</p>
+              <h4 class="uppercase ff-serif fs-600">Uranus, neptune & Pluto</h4>
+            </div>
+
+            <div>
+              <p class="text-accent">Heading 5 - Barlow Condensed Regular - 28px - 4.75 Character Space</p>
+              <h5 class="uppercase letter-spacing-1 text-accent fs-500">So, you want to travel to space</h5>
+            </div>
+          </div>
+
+          <div class="flow" style="flex-basis: 100%; --flow-space: 4rem;">
+            <div>
+              <p class="text-accent">Subheading 1 - Bellefair Regualr - 28px</p>
+              <p class="uppercase ff-serif fs-400">384,400 km</p>
+            </div>
+
+            <div>
+              <p class="text-accent">Subheading 2 - Barlow Condensed Regular - 14px - 2.35 Character Space</p>
+              <p class="uppercase letter-spacing-3 fs-200">AVG. Distance</p>
+            </div>
+
+            <div>
+              <p class="text-accent">Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space</p>
+              <p class="uppercase letter-spacing-2 fs-300">Europa</p>
+            </div>
+
+            <div>
+              <p class="text-accent">Body Text</p>
+              <p class="ff-sans-normal fs-200">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui odit quo hic corporis vitae nihil, aperiam molestiae temporibus exercitationem tempora illo laudantium quia repellat, veniam autem itaque error, nemo nam!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow" id="interactive-elements">
+        <h2 class="numbered-title"><span>03</span> Interactive elements</h2>
+
+        <!-- navigation -->
+        <div>
+          <nav>
+            <ul class="primary-navigation underline-indicators flex"> 
+              <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a></li>
+              <li><a class ="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a></li>
+              <li><a class ="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="flex">
+          <div style="margin-top: 5rem;">
+            <!-- explore button -->
+            <a href="#" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a> 
+          </div>
+
+          <div class="flow" style="margin-bottom: 50vh; --flow-space: 4rem;">
+            <!-- Tabs -->
+            <div class="tab-list underline-indicators flex">
+              <button aria-selected="true" class="uppercase ff-sans-cond text-white bg-dark letter-spacing-2">Moon</button>
+              <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
+              <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+            </div>
+            <!-- Dots -->
+            <div class="dot-indicators flex">
+              <button aria-selected="true"><span class="sr-only">Slide title</span></button>
+              <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+              <button aria-selected="false"><span class="sr-only">Slide title</span></button>
+            </div>
+            <!-- Numbers -->
+             <div class="num-indicators flex">
+              <button aria-selected="true" class="uppercase ff-sans-cond text-white bg-dark">1</button>
+             </div>
+              <div class="num-indicators flex">
+                <button aria-selected="false" class="uppercase ff-sans-cond text-white bg-dark">2</button>
+              </div>
+              <div class="num-indicators flex">
+                <button aria-selected="false" class="uppercase ff-sans-cond text-white bg-dark">3</button>
+              </div>
+              
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
